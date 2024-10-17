@@ -31,26 +31,26 @@ class SplashScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: screenHeight * 0.08), // 화면 맨 위에 여백 추가
             child: Column(
-              children: [
-                Text(
-                  '혀 사진으로 뇌질환 예측',
-                  style: TextStyle(
-                    fontSize: screenHeight * 0.02, // 폰트 크기 조정
-                    fontWeight: FontWeight.w500, // Pretendard-Light 적용
-                    color: const Color.fromARGB(255, 0, 140, 255), // 텍스트 색상 설정
-                  ),
+                // children: [
+                //   Text(
+                //     '혀 사진으로 뇌질환 예측',
+                //     style: TextStyle(
+                //       fontSize: screenHeight * 0.02, // 폰트 크기 조정
+                //       fontWeight: FontWeight.w500, // Pretendard-Light 적용
+                //       color: const Color.fromARGB(255, 0, 140, 255), // 텍스트 색상 설정
+                //     ),
+                //   ),
+                //   SizedBox(height: screenHeight * 0.005),
+                //   Text(
+                //     '인공지능으로 150세까지!',
+                //     style: TextStyle(
+                //       fontSize: screenHeight * 0.03, // 폰트 크기 조정
+                //       fontWeight: FontWeight.w700, // Pretendard-Regular 적용
+                //       color: const Color.fromARGB(255, 0, 140, 255), // 텍스트 색상 설정
+                //     ),
+                //   ),
+                // ],
                 ),
-                SizedBox(height: screenHeight * 0.005),
-                Text(
-                  '인공지능으로 150세까지!',
-                  style: TextStyle(
-                    fontSize: screenHeight * 0.03, // 폰트 크기 조정
-                    fontWeight: FontWeight.w700, // Pretendard-Regular 적용
-                    color: const Color.fromARGB(255, 0, 140, 255), // 텍스트 색상 설정
-                  ),
-                ),
-              ],
-            ),
           ),
           Container(
             width: screenWidth,
