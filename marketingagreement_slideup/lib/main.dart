@@ -19,131 +19,137 @@ class SlideUpPage extends StatelessWidget {
                 ),
               ),
               builder: (BuildContext context) {
+                final screenHeight = MediaQuery.of(context).size.height;
+                final fontScaleFactor = MediaQuery.of(context).textScaleFactor;
+
                 return FractionallySizedBox(
                   heightFactor: 0.6, // 화면의 60%만큼 차지
-                  child: Container(
-                    padding: EdgeInsets.all(16.0), // 여백
-                    color: Colors.white, // 배경 흰색
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 20), // 첫 텍스트 위 여백
-                        Text(
-                          '텅브레인 소식, 혜택 알림을\n받으시겠어요?',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard-Bold', // 폰트 적용
-                            fontSize: 28, // 폰트 크기
-                            color: Colors.black, // 텍스트 색상
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        Center(
-                          child: CircleAvatar(
-                            radius: 50,
-                            backgroundColor: Colors.yellow, // 원 배경 색상
-                            child: Image.asset(
-                              'assets/images/notification_image.png', // 이미지 경로
-                              width: 80, // 이미지 크기
-                              height: 80,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.all(16.0), // 여백
+                      color: Colors.white, // 배경 흰색
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 20), // 첫 텍스트 위 여백
+                          Text(
+                            '텅브레인 소식, 혜택 알림을\n받으시겠어요?',
+                            style: TextStyle(
+                              fontFamily: 'Pretendard-Bold', // 폰트 적용
+                              fontSize: 24 * fontScaleFactor, // 폰트 크기 조정
+                              color: Colors.black, // 텍스트 색상
                             ),
                           ),
-                        ),
-                        SizedBox(height: 20),
-                        Container(
-                          padding:
-                              EdgeInsets.symmetric(vertical: 1, horizontal: 25),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.grey, // 아웃라인 색상
-                              width: 1.0, // 아웃라인 두께
-                            ),
-                            borderRadius:
-                                BorderRadius.circular(8), // 네모 박스 둥글기 조절
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text(
-                                '마케팅 정보 수신 동의',
-                                style: TextStyle(
-                                  fontFamily: 'Pretendard-Light',
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                ),
+                          SizedBox(height: 10),
+                          Center(
+                            child: CircleAvatar(
+                              radius: 50,
+                              backgroundColor: Colors.yellow, // 원 배경 색상
+                              child: Image.asset(
+                                'assets/images/notification_image.png', // 이미지 경로
+                                width: 80, // 이미지 크기
+                                height: 80,
                               ),
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DetailPage()),
-                                  );
-                                },
-                                child: const Text(
-                                  '자세히 보기',
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 1, horizontal: 25),
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey, // 아웃라인 색상
+                                width: 1.0, // 아웃라인 두께
+                              ),
+                              borderRadius:
+                                  BorderRadius.circular(8), // 네모 박스 둥글기 조절
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '마케팅 정보 수신 동의',
                                   style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    color: Colors.grey,
-                                    fontFamily: 'Pretendard-Thin',
-                                    fontSize: 14,
+                                    fontFamily: 'Pretendard-Light',
+                                    color: Colors.black,
+                                    fontSize: 16 * fontScaleFactor, // 폰트 크기 조정
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        const Text(
-                          ' * 해당 동의 내역은 마이메뉴 > 앱 설정하기 > \n   마케팅 정보 수신 메뉴에서 변경가능합니다.',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard-Thin',
-                            fontSize: 12,
-                            color: Colors.grey, // 텍스트 회색 처리
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        const Text(
-                          ' * 해당 항목 동의 시 앱 PUSH, SMS, 이메일 알람을 받으실 수 있습니다.',
-                          style: TextStyle(
-                            fontFamily: 'Pretendard-Thin',
-                            fontSize: 12,
-                            color: Colors.grey, // 텍스트 회색 처리
-                          ),
-                        ),
-                        Spacer(),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.yellow, // 버튼 배경색
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(15), // 버튼 둥글기 조절 가능
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => DetailPage()),
+                                    );
+                                  },
+                                  child: Text(
+                                    '자세히 보기',
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.grey,
+                                      fontFamily: 'Pretendard-Thin',
+                                      fontSize:
+                                          14 * fontScaleFactor, // 폰트 크기 조정
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            minimumSize: Size(double.infinity, 50), // 버튼 크기
                           ),
-                          child: Text(
-                            '좋아요!',
+                          SizedBox(height: 20),
+                          Text(
+                            ' * 해당 동의 내역은 마이메뉴 > 앱 설정하기 > \n   마케팅 정보 수신 메뉴에서 변경가능합니다.',
                             style: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 20,
+                              fontFamily: 'Pretendard-Thin',
+                              fontSize: 12 * fontScaleFactor, // 폰트 크기 조정
+                              color: Colors.grey, // 텍스트 회색 처리
                             ),
                           ),
-                        ),
-                        SizedBox(height: 10), // 버튼 아래 여백
-                        Center(
-                          child: TextButton(
+                          SizedBox(height: 10),
+                          Text(
+                            ' * 해당 항목 동의 시 앱 PUSH, SMS, 이메일 알람을 받으실 수 있습니다.',
+                            style: TextStyle(
+                              fontFamily: 'Pretendard-Thin',
+                              fontSize: 12 * fontScaleFactor, // 폰트 크기 조정
+                              color: Colors.grey, // 텍스트 회색 처리
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          ElevatedButton(
                             onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.yellow, // 버튼 배경색
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(15), // 버튼 둥글기 조절 가능
+                              ),
+                              minimumSize: Size(double.infinity, 40), // 버튼 크기
+                            ),
                             child: Text(
-                              '알림 받지 않기',
+                              '좋아요!',
                               style: TextStyle(
-                                decoration: TextDecoration.underline, // 밑줄 처리
-                                color: Colors.grey,
-                                fontSize: 14,
+                                color: Colors.black87,
+                                fontSize: 16 * fontScaleFactor, // 폰트 크기 조정
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(height: 10), // 버튼 아래 여백
+                          Center(
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                '알림 받지 않기',
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline, // 밑줄 처리
+                                  color: Colors.grey,
+                                  fontSize: 14 * fontScaleFactor, // 폰트 크기 조정
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
