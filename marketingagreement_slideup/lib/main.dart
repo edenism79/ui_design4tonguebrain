@@ -86,7 +86,7 @@ class SlideUpPage extends StatelessWidget {
                                   child: Text(
                                     '자세히 보기',
                                     style: TextStyle(
-                                      decoration: TextDecoration.underline,
+                                      //decoration: TextDecoration.underline,
                                       color: Colors.grey,
                                       fontFamily: 'Pretendard-Thin',
                                       fontSize:
@@ -141,7 +141,7 @@ class SlideUpPage extends StatelessWidget {
                               child: Text(
                                 '알림 받지 않기',
                                 style: TextStyle(
-                                  decoration: TextDecoration.underline, // 밑줄 처리
+                                  //decoration: TextDecoration.underline, // 밑줄 처리
                                   color: Colors.grey,
                                   fontSize: 14 * fontScaleFactor, // 폰트 크기 조정
                                 ),
